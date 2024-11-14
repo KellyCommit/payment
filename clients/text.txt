@@ -1,0 +1,55 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const PaymentForm = () => {
+  const [accountDetails, setAccountDetails] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleInitiateTransfer = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      // Make the API request to initialize the transaction and generate account details
+      const response = await axios.post('/api/initiate-transfer', {
+        amount: 500, // Example amount
+        customerName: 'John Doe',
+        customerEmail: 'john.doe@example.com',
+        paymentReference: 'uniqueReference123', // Example payment reference
+      });
+
+      // Set the account details from the response
+      setAccountDetails(response.data.accountDetails);
+    } catch (err) {
+      setError('Error initiating transfer: ' + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Payment Form</h1>
+      <button onClick={handleInitiateTransfer} disabled={loading}>
+        {loading ? 'Loading...' : 'Initiate Transfer'}
+      </button>
+
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+
+      {accountDetails && (
+        <div>
+          <h2>Bank Account Details:</h2>
+          <p><strong>Account Number:</strong> {accountDetails.accountNumber}</p>
+          <p><strong>Account Name:</strong> {accountDetails.accountName}</p>
+          <p><strong>Bank Name:</strong> {accountDetails.bankName}</p>
+          <p><strong>Amount to Pay:</strong> {accountDetails.totalPayable}</p>
+          <p><strong>Payment Link (USSD):</strong> {accountDetails.ussdPayment}</p>
+          <p><strong>Expires On:</strong> {accountDetails.expiresOn}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default PaymentForm;

@@ -1,0 +1,64 @@
+.detail-container{
+    background:#fff;
+    padding:1rem;
+    border-radius: 0.3rem;
+}
+.detail-header{
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+.detail-header >h1{
+    margin-bottom:1rem;
+}
+.detail-header >p{
+    line-height: 1.5rem;
+}
+.detail-header p span{
+    color:blue;
+}
+.detail-wrapper{
+    margin-top:1.5rem;
+}
+.user{
+    display:flex;
+    align-items: center;
+    margin-bottom:1rem;
+    gap:2.9rem;
+}
+.edit-u{
+    margin-left:-1.5rem;
+}
+.bank-name{
+    text-transform: uppercase;
+}
+.user-d{
+    width:100%;
+    display:flex;
+    align-items: center;
+}
+.account{
+    width:80%;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    margin-bottom: 1rem;
+}
+.user-d button{
+    margin-top:-0.5rem;
+    padding:0.5rem;
+    background:blue;
+    color:white;
+    outline:none;
+    border:none;
+    border-radius: 0.2rem;
+    cursor:pointer;
+    font-size: 0.7rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.note-detail{
+    margin-top:1.5rem;
+    background:#fff;
+    padding:1rem;
+    padding-top:1.3rem;
+    border-radius: 0.3rem;
+}

@@ -1,0 +1,8 @@
+.nav{
+    padding:0.7rem;
+    text-align: center;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    background:#fff;
+    position:sticky;
+    top:0;
+}

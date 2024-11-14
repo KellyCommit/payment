@@ -1,0 +1,27 @@
+.payment-guide{
+    margin:1rem 0;
+    /* margin-bottom:3rem; */
+}
+.guide{
+    margin:1.5rem 0;
+}
+.guide p{
+    text-align: center;
+    font-size: 0.9rem;
+}
+.payment-guide-wrapper{
+    background:#fff;
+    padding:1rem;
+    border-radius: 0.3rem;
+}
+.payment-guide-wrapper >h1{
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+.payment-guide-wrapper p{
+    margin-bottom:1rem;
+}
+.payment-guide-wrapper p span{
+    color:crimson;
+}

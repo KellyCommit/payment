@@ -1,0 +1,83 @@
+.transfer{
+    background:rgb(237, 244, 226);
+    width:100%;
+    padding-bottom: 3rem;
+    position: relative;
+}
+.indicators{
+    width:80%;
+    margin:1rem 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.indicator-wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.3rem;
+}
+.indicator-wrapper > p{
+    font-size: 0.7rem;
+}
+.indicator{
+    width:20px;
+    height:20px;
+    padding:0.2rem;
+    background:grey;
+    color:white;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 1s ease-in;
+}
+.indicator >i{
+    color:white;
+}
+.line{
+    width:100%;
+    height:1px;
+    background:grey;
+}
+.overlay-payment {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 1s ease-in-out;
+    transform: translateY(100%);
+  }
+  
+  .show-modal {
+    transform: translateY(0);
+  }
+  
+  .modal-payment {
+    width: 100%;
+    height: 50vh;
+    position: fixed;
+    bottom:0;
+    background:#fff;
+    padding: 1rem;
+    text-align: center;
+  }
+.bad-request{
+    width:50%;
+    padding:1.5rem;
+    border:1px solid blue;
+    margin:5% auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    gap:1rem;
+}
+.bad-request >p{
+    font-size: 2rem;
+    text-align: center;
+}

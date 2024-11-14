@@ -1,0 +1,25 @@
+.copied-modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width:80%;
+    transform: translate(-50%, -20%);
+    background: blue;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    align-items: center;
+    animation: slideDown 0.5s forwards;
+  }
+
+  @keyframes slideDown {
+    0% {
+      top: 20%;
+    }
+    100% {
+      top: 50%;
+    }
+  }
