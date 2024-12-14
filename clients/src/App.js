@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-            <Route path="/transfer" element={<Transfer />} />
-            <Route path="opay-transfer" element={<TransferToOpay/>}  />
-            <Route path="/monnipoint" element={<MonniPoint/>}/>
+            <Route path="/" element={<Transfer />} />
+            {/* <Route path="opay-transfer" element={<TransferToOpay/>}  />
+            <Route path="/monnipoint" element={<MonniPoint/>}/> */}
         </Routes>
     </div>
   );

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const axios = require('axios');
-const MonnifyPayment = require('../Models/MonnifyPayment');
+const MonnifyPayment = require('../models/MonnifyPayment');
 require('dotenv').config();
 
 const apiKey = process.env.MONNIFY_API_KEY;

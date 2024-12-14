@@ -19,7 +19,7 @@ const UserDetail = ({ formatTime, onDurationFetched }) => {
     const params = new URLSearchParams(location.search);
     const transactionId = params.get('transactionId');
   
-    axios.get(`http://localhost:5001/api/v1/get-transaction/${transactionId}`)
+    axios.get(`https://ipayment.onrender.com/api/v1/get-transaction/${transactionId}`)
       .then(response => {
         const { accountNumber, bankName, accountName, accountDurationSeconds, amount } = response.data;
         setTransactionReference(transactionId);

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./confirmpayment.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const ConfirmPayment = ({ onFormSubmit, onSuccessSubmit, onFailureSubmit }) => {
+  const { id } = useParams(); // This is the Path ID
+  const location = useLocation();
+
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     transactionID: "",
@@ -21,15 +24,23 @@ const ConfirmPayment = ({ onFormSubmit, onSuccessSubmit, onFailureSubmit }) => {
 
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/v2/monify/verify-transaction/${transactionID}`
+        `https://ipayment.onrender.com/api/v2/monify/verify-transaction/${transactionID}`
       );
 
       if (response.data && response.data.responseMessage === "success") {
         onSuccessSubmit();
         onFormSubmit();
+        //save payment response
+
         setTimeout(() => {
+          const { transactionID, someOtherData } = response.data;
           // / Redirect to the transfer route with transactionId in the URL
-          window.location.href = `http://localhost:3001/transfer?transactionId=${transactionID}`;
+          // Construct the URL
+          const redirectURL = `http://localhost:3000/Detail/${id}?transactionID=${encodeURIComponent(
+            transactionID
+          )}&otherData=${encodeURIComponent(someOtherData)}`;
+          // Redirect
+          window.location.href = redirectURL;
         }, 5000);
       } else {
         setError("Payment verification failed. Please try again.");

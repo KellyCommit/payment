@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Order = require("../Models/Order");
+const Order = require("../models/Order");
 
 // POST route to save transaction details
 router.post('/save-transaction', async (req, res) => {
