@@ -25,8 +25,8 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB).then(()=>console.log('Database Connected Sucessfully'));
 };
-app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/users", userRoute);
+// app.use("/api/v1/auth", authRoute);
+// app.use("/api/v1/users", userRoute);
 app.use("/api/v1/payments",paymentRoute);
 app.use("/api/v1/transfers",transferRoute);
 app.use("/api/v1/monnify",monnifyRoute);
